@@ -3,7 +3,7 @@ layout: post
 title: "github个人博客"
 date: 2013-05-22 22:19
 comments: true
-categories: 
+categories: test
 ---
 过程如下：
 # 安装和设置Git #
