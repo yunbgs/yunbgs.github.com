@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[云办公室]]></title>
+  <link href="http://yunbgs.github.io/atom.xml" rel="self"/>
+  <link href="http://yunbgs.github.io/"/>
+  <updated>2013-05-23T15:21:55+08:00</updated>
+  <id>http://yunbgs.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[不同机器上配置发Blog]]></title>
+    <link href="http://yunbgs.github.io/blog/2013/05/23/work-test/"/>
+    <updated>2013-05-23T14:17:00+08:00</updated>
+    <id>http://yunbgs.github.io/blog/2013/05/23/work-test</id>
+    <content type="html"><![CDATA[<p>想工作机器与家中机器上都可以同步发Blog,解决办法：</p>
+
+<h1>1.同前配置</h1>
+
+<p>安装和设置Git
+安装Ruby环境</p>
+
+<h1>2.不同配置</h1>
+
+<p>获取自己github上的octopress仓库</p>
+
+<pre><code>git clone -b source git@github.com:username/username.github.com.git octopress
+cd octopress
+</code></pre>
+
+<p>安装依赖gems</p>
+
+<pre><code>gem install bundler
+bundle install
+rake install
+或
+bundle exec rake install
+</code></pre>
+
+<p>每次写文章之前，进入当前的_post目录下：</p>
+
+<pre><code>git pull origin source
+</code></pre>
+
+<p>写完之后，执行：</p>
+
+<pre><code>git add *
+git commit -m
+git push origin source
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[github个人博客]]></title>
+    <link href="http://yunbgs.github.io/blog/2013/05/22/yunbgs/"/>
+    <updated>2013-05-22T22:19:00+08:00</updated>
+    <id>http://yunbgs.github.io/blog/2013/05/22/yunbgs</id>
+    <content type="html"><![CDATA[<p>过程如下：</p>
+
+<h1>安装和设置Git</h1>
+
+<p>下载Git for Windows，安装完成后就可以在本地使用Git了，但要将内容放到Github上，必须先在Github上注册个账户，然后在本机使用Git创建SSH Key。</p>
+
+<p>在Git Bash上输入命令:</p>
+
+<pre><code>ssh-keygen -C "username@email.com" -t rsa
+</code></pre>
+
+<p>Note: username@email.com需要更换成你自己的在Github上注册的Email地址</p>
+
+<p>这样会在用户目录(C:\Documents and Settings\UserName)下产生一个.ssh文件夹，里面为对应的SSH Keys，其中id_rsa.pub是Github需要的SSH公钥文件。</p>
+
+<p>在Github的Account Settings里选择SSH Keys，在其中将id_rsa.pub文件里内容拷贝至 其中的Key里。</p>
+
+<p>这样以后就可以直接使用Git和GitHub了。</p>
+
+<h1>安装Ruby环境</h1>
+
+<p>下载RubyInstaller和DevKit。</p>
+
+<p>Octopress需要的Ruby版本为1.9.2，所以选rubyinstaller-1.9.2-p290.exe，DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe。</p>
+
+<p>先安装RubyInstaller，然后解压缩DevKit(路径中不能有中文)。</p>
+
+<p>在”Start Command Prompt with Ruby”命令行中进入DevKit解压缩的目录，然后运行以下命令:</p>
+
+<pre><code>ruby dk.rb init
+ruby dk.rb install
+gem install rdiscount --platform=ruby
+</code></pre>
+
+<p>如果安装成功，就可以使用一些Ruby的工具了，也为后面搭建博客提供了基础环境。</p>
+
+<h1>安装Octopress</h1>
+
+<p>先通过Git从Github上克隆一份Octopress</p>
+
+<pre><code>git clone git://github.com/imathis/octopress.git octopress
+</code></pre>
+
+<p>然后安装一些依赖的工具</p>
+
+<pre><code>cd octopress
+ruby --version # Should report Ruby 1.9.2
+gem install bundler
+bundle install
+</code></pre>
+
+<p>安装Octopress默认的Theme</p>
+
+<pre><code>rake install
+</code></pre>
+
+<h1>配置Octopress</h1>
+
+<p>通过修改_config.yml来配置博客，具体可以在我的Github上查看具体的配置内容。</p>
+
+<h1>开始写博文</h1>
+
+<p>通过rake new_post[&ldquo;title&rdquo;]来在source/_post下创建一个新的Post，文件名如下面的格式:2012-02-16-title.markdown。</p>
+
+<p>然后可以用VIM打开该文件，并在其中输入/编辑文章内容。</p>
+
+<p>写文章时，可以使用Markdown和Octopress Plugins来对内容进行格式排版。</p>
+
+<h1>预览效果</h1>
+
+<p>在修改设置或者写完文章后，想看看具体效果，可以通过如下命令来完成:</p>
+
+<pre><code>rake generate
+rake preview
+</code></pre>
+
+<p>然后在浏览器中打开<a href="http://localhost:4000/">http://localhost:4000/</a> 来看一看效果。</p>
+
+<h1>将博客部署到Github上</h1>
+
+<p>在预览的效果符合自己的预期后，就可以通过如下命令将内容部署到Github上了。</p>
+
+<p>第一次部署前需要先要在Github上创建一个username.github.com的repository， 然后通过rake setup_github_pages将自己的Blog与上述的repository关联起来。 在其过程中根据提示输入username.github.com。</p>
+
+<p>然后就可以通过下面的命令来部署自己的博客内容至Github了:</p>
+
+<pre><code>rake deploy
+git status
+git add .
+git commit -a -m 'comment'
+git push origin source
+</code></pre>
+
+<h1>开始浏览自己的博客</h1>
+
+<p>在浏览器的地址栏中输入username.github.com，打开的网站就是自己的博客了，此刻一个独立博客就如此问世了!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[test_title]]></title>
+    <link href="http://yunbgs.github.io/blog/2013/05/22/test-title/"/>
+    <updated>2013-05-22T20:42:00+08:00</updated>
+    <id>http://yunbgs.github.io/blog/2013/05/22/test-title</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>
