@@ -105,6 +105,7 @@
 
 <pre><code>git clone -b source git@github.com:username/username.github.com.git octopress
 cd octopress
+git clone git@github.com:username/username.github.com.git _deploy
 </code></pre>
 
 <p>安装依赖gems</p>
@@ -114,6 +115,30 @@ bundle install
 rake install
 或
 bundle exec rake install
+</code></pre>
+
+<p>更新_deploy和source内容</p>
+
+<pre><code>cd _deploy
+git pull origin master
+cd ..
+git pull origin source
+</code></pre>
+
+<p>至此，我们在另外一台pc上的octopress环境就搭建完成了，以下是比较重要的说明： 试想一下，如果我们此时在这个环境中执行：</p>
+
+<pre><code>rake new_post['title']
+rake generate
+rake deploy
+</code></pre>
+
+<p>会发生什么呢？显然，我们所有的文章只剩下刚刚新建的这个了。所以我们需要做的是将旧的<em>post目录下的文章同步到新的</em>post目录下，这就是git的用法了。</p>
+
+<p>进入旧的_post的目录下：</p>
+
+<pre><code>git add *
+git commit -m
+git push origin source
 </code></pre>
 
 <p>每次写文章之前，进入当前的_post目录下：</p>
@@ -127,6 +152,8 @@ bundle exec rake install
 git commit -m
 git push origin source
 </code></pre>
+
+<p>也就是说，每次写之前写之后都要与仓库进行同步！</p>
 </div>
 
 
