@@ -5,7 +5,7 @@
 url: http://yunbgs.github.io
 title: 云办公室
 subtitle: 企业，团队，圈子内的应用.
-author: Your Name
+author: yunbgs.com
 simple_search: http://google.com/search
 description:
 
@@ -69,8 +69,8 @@ github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user:
-twitter_tweet_button: true
+#twitter_user:
+#twitter_tweet_button: true
 
 # Google +1
 google_plus_one: false
@@ -98,3 +98,5 @@ google_analytics_tracking_id:
 
 # Facebook Like
 facebook_like: false
+
+weibo_share: true
