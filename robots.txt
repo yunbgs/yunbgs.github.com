@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://yunbgs.github.io/sitemap.xml 
