@@ -1,0 +1,32 @@
+---
+layout: post
+title: "不同机器上配置发Blog"
+date: 2013-05-23 14:17
+comments: true
+categories: 
+---
+想工作机器与家中机器上都可以同步发Blog,解决办法：
+# 1.同前配置 #
+安装和设置Git
+安装Ruby环境
+# 2.不同配置 #
+获取自己github上的octopress仓库
+
+    git clone -b source git@github.com:username/username.github.com.git octopress
+    cd octopress
+
+安装依赖gems
+
+    gem install bundler
+    bundle install
+    rake install
+    或
+    bundle exec rake install
+每次写文章之前，进入当前的_post目录下：
+
+    git pull origin source
+写完之后，执行：
+
+    git add *
+    git commit -m
+    git push origin source
