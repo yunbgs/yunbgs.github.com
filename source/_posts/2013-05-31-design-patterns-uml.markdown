@@ -6,3 +6,5 @@ comments: true
 categories: 设计模式
 ---
 ![](http://yunbgs.com/images/design_patterns_uml.png)
+
+[下载pdf](http://yunbgs.com/download/pdf/designpatternscard.pdf "设计模式之UML一览")
