@@ -4,7 +4,7 @@
   <title><![CDATA[云办公室]]></title>
   <link href="http://yunbgs.github.io/atom.xml" rel="self"/>
   <link href="http://yunbgs.github.io/"/>
-  <updated>2013-05-31T16:36:02+08:00</updated>
+  <updated>2013-05-31T16:52:57+08:00</updated>
   <id>http://yunbgs.github.io/</id>
   <author>
     <name><![CDATA[yunbgs.com]]></name>
@@ -19,6 +19,8 @@
     <updated>2013-05-31T16:31:00+08:00</updated>
     <id>http://yunbgs.github.io/blog/2013/05/31/design-patterns-uml</id>
     <content type="html"><![CDATA[<p><img src="http://yunbgs.com/images/design_patterns_uml.png" alt="" /></p>
+
+<p><a href="http://yunbgs.com/download/pdf/designpatternscard.pdf" title="设计模式之UML一览">下载pdf</a></p>
 ]]></content>
   </entry>
   
