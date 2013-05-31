@@ -3,7 +3,7 @@ layout: post
 title: "不同机器上配置发Blog"
 date: 2013-05-23 14:17
 comments: true
-categories: test111
+categories: git
 ---
 想工作机器与家中机器上都可以同步发Blog,解决办法：
 # 1.同前配置 #

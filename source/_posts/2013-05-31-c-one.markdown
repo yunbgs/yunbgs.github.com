@@ -24,6 +24,7 @@ categories: C
 
 打印结果：
 > x=2,y=3,z=1
+> 
 > 4,5,3
 
     #include <stdio.h>
@@ -42,6 +43,7 @@ categories: C
     }
 打印结果：
 > x=2,y=2,z=1
+> 
 > 4,4,3
 
     #include <stdio.h>
@@ -60,6 +62,7 @@ categories: C
     }
 打印结果：
 > x=2,y=2,z=1
+> 
 > 4,4,3
 
 volatile定义的变量会在程序外被改变,每次都必须从内存中读取，而不能重复使用放在cache或寄存器中的备份。
