@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C | 云办公室]]></title>
   <link href="http://yunbgs.github.io/blog/categories/c/atom.xml" rel="self"/>
   <link href="http://yunbgs.github.io/"/>
-  <updated>2013-05-31T15:10:09+08:00</updated>
+  <updated>2013-05-31T15:59:28+08:00</updated>
   <id>http://yunbgs.github.io/</id>
   <author>
     <name><![CDATA[yunbgs.com]]></name>
@@ -38,8 +38,9 @@ return;
 
 <p>打印结果：</p>
 
-<blockquote><p>x=2,y=3,z=1
-4,5,3</p></blockquote>
+<blockquote><p>x=2,y=3,z=1</p>
+
+<p>4,5,3</p></blockquote>
 
 <pre><code>#include &lt;stdio.h&gt;
 
@@ -59,8 +60,9 @@ return;
 
 <p>打印结果：</p>
 
-<blockquote><p>x=2,y=2,z=1
-4,4,3</p></blockquote>
+<blockquote><p>x=2,y=2,z=1</p>
+
+<p>4,4,3</p></blockquote>
 
 <pre><code>#include &lt;stdio.h&gt;
 
@@ -80,8 +82,9 @@ return;
 
 <p>打印结果：</p>
 
-<blockquote><p>x=2,y=2,z=1
-4,4,3</p></blockquote>
+<blockquote><p>x=2,y=2,z=1</p>
+
+<p>4,4,3</p></blockquote>
 
 <p>volatile定义的变量会在程序外被改变,每次都必须从内存中读取，而不能重复使用放在cache或寄存器中的备份。
 同时说明局部变量被优化后结果出现异常。</p>
