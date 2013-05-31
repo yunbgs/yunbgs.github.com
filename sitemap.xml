@@ -2,23 +2,27 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://yunbgs.github.io/blog/2013/05/22/test-title/</loc>
-        <lastmod>2013-05-23T15:18:02+08:00</lastmod>
+        <lastmod>2013-05-31T14:22:05+08:00</lastmod>
     </url>
     <url>
         <loc>http://yunbgs.github.io/blog/2013/05/22/yunbgs/</loc>
-        <lastmod>2013-05-23T15:18:02+08:00</lastmod>
+        <lastmod>2013-05-31T14:22:05+08:00</lastmod>
     </url>
     <url>
         <loc>http://yunbgs.github.io/blog/2013/05/23/work-test/</loc>
-        <lastmod>2013-05-23T15:28:57+08:00</lastmod>
+        <lastmod>2013-05-31T14:22:05+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://yunbgs.github.io/blog/2013/05/31/c-one/</loc>
+        <lastmod>2013-05-31T14:52:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://yunbgs.github.io/blog/archives/</loc>
-        <lastmod>2013-05-23T15:28:57+08:00</lastmod>
+        <lastmod>2013-05-31T14:52:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://yunbgs.github.io/</loc>
-        <lastmod>2013-05-23T15:28:57+08:00</lastmod>
+        <lastmod>2013-05-31T14:52:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://yunbgs.github.io/robots.txt</loc>

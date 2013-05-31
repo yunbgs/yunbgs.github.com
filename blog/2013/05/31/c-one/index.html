@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>test_title - 云办公室</title>
+  <title>C语言一例子（参数执行顺序，变量存储类型） - 云办公室</title>
   <meta name="author" content="yunbgs.com">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="3个小例子说明实际细节问题，局部变量存在栈中会被编译器优化(从cache或寄存器中读取)，static变量存储在静态区不会被优化，volatile变量存在栈区但它告诉程序每次都要去存放的地方读取。 #include &lt;stdio.h&gt; int
+test(int x,int y,int &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yunbgs.github.io/blog/2013/05/22/test-title">
+  <link rel="canonical" href="http://yunbgs.github.io/blog/2013/05/31/c-one">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="云办公室" type="application/atom+xml">
@@ -69,7 +69,7 @@
   
   <header>
     
-      <h1 class="entry-title">Test_title</h1>
+      <h1 class="entry-title">C语言一例子（参数执行顺序，变量存储类型）</h1>
     
     
       <p class="meta">
@@ -85,14 +85,80 @@
   
 
 
-<time datetime="2013-05-22T20:42:00+08:00" pubdate data-updated="true">2013年05月22日</time>
+<time datetime="2013-05-31T14:23:00+08:00" pubdate data-updated="true">2013年05月31日</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content">
+<div class="entry-content"><p>3个小例子说明实际细节问题，局部变量存在栈中会被编译器优化(从cache或寄存器中读取)，static变量存储在静态区不会被优化，volatile变量存在栈区但它告诉程序每次都要去存放的地方读取。</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int
+test(int x,int y,int z){
+printf("x=%d,y=%d,z=%d\n",x,y,z);
+return 0;
+}
+int
+main(){
+int t=1;
+test(t++,t,t++);
+printf("%d,%d,%d\n",t++,t,t++);
+return;
+}
+</code></pre>
+
+<p>打印结果：
+x=2,y=3,z=1</p>
+
+<h2>4,5,3</h2>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int
+test(int x,int y,int z){
+printf("x=%d,y=%d,z=%d\n",x,y,z);
+return 0;
+}
+int
+main(){
+static int t=1;
+test(t++,t,t++);
+printf("%d,%d,%d\n",t++,t,t++);
+return;
+}
+</code></pre>
+
+<p>打印结果：
+x=2,y=2,z=1</p>
+
+<h2>4,4,3</h2>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int
+test(int x,int y,int z){
+printf("x=%d,y=%d,z=%d\n",x,y,z);
+return 0;
+}
+int
+main(){
+volatile int t=1;
+test(t++,t,t++);
+printf("%d,%d,%d\n",t++,t,t++);
+return;
+}
+</code></pre>
+
+<p>打印结果：
+x=2,y=2,z=1</p>
+
+<h2>4,4,3</h2>
+
+<p>volatile定义的变量会在程序外被改变,每次都必须从内存中读取，而不能重复使用放在cache或寄存器中的备份。
+同时说明局部变量被优化后结果出现异常。</p>
 </div>
 
 
@@ -115,14 +181,8 @@
   
 
 
-<time datetime="2013-05-22T20:42:00+08:00" pubdate data-updated="true">2013年05月22日</time>
+<time datetime="2013-05-31T14:23:00+08:00" pubdate data-updated="true">2013年05月31日</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/test/'>test</a>
-  
-</span>
 
 
     </p>
@@ -166,8 +226,8 @@ var jiathis_config = {data_track_clickback:'true'};
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/05/23/work-test/" title="Previous Post: 不同机器上配置发Blog">&laquo; 不同机器上配置发Blog</a>
       
-        <a class="basic-alignment right" href="/blog/2013/05/22/yunbgs/" title="Next Post: github个人博客">github个人博客 &raquo;</a>
       
     </p>
   </footer>

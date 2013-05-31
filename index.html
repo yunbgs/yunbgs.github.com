@@ -9,8 +9,8 @@
   <meta name="author" content="yunbgs.com">
 
   
-  <meta name="description" content="想工作机器与家中机器上都可以同步发Blog,解决办法： 1.同前配置 安装和设置Git
-安装Ruby环境 2.不同配置 获取自己github上的octopress仓库 git clone -b source git@github.com:username/username.github.com. &hellip;">
+  <meta name="description" content="3个小例子说明实际细节问题，局部变量存在栈中会被编译器优化(从cache或寄存器中读取)，static变量存储在静态区不会被优化，volatile变量存在栈区但它告诉程序每次都要去存放的地方读取。 #include &lt;stdio.h&gt; int
+test(int x,int y,int &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -72,6 +72,108 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/05/31/c-one/">C语言一例子（参数执行顺序，变量存储类型）</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-31T14:23:00+08:00" pubdate data-updated="true">2013年05月31日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>3个小例子说明实际细节问题，局部变量存在栈中会被编译器优化(从cache或寄存器中读取)，static变量存储在静态区不会被优化，volatile变量存在栈区但它告诉程序每次都要去存放的地方读取。</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int
+test(int x,int y,int z){
+printf("x=%d,y=%d,z=%d\n",x,y,z);
+return 0;
+}
+int
+main(){
+int t=1;
+test(t++,t,t++);
+printf("%d,%d,%d\n",t++,t,t++);
+return;
+}
+</code></pre>
+
+<p>打印结果：
+x=2,y=3,z=1</p>
+
+<h2>4,5,3</h2>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int
+test(int x,int y,int z){
+printf("x=%d,y=%d,z=%d\n",x,y,z);
+return 0;
+}
+int
+main(){
+static int t=1;
+test(t++,t,t++);
+printf("%d,%d,%d\n",t++,t,t++);
+return;
+}
+</code></pre>
+
+<p>打印结果：
+x=2,y=2,z=1</p>
+
+<h2>4,4,3</h2>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int
+test(int x,int y,int z){
+printf("x=%d,y=%d,z=%d\n",x,y,z);
+return 0;
+}
+int
+main(){
+volatile int t=1;
+test(t++,t,t++);
+printf("%d,%d,%d\n",t++,t,t++);
+return;
+}
+</code></pre>
+
+<p>打印结果：
+x=2,y=2,z=1</p>
+
+<h2>4,4,3</h2>
+
+<p>volatile定义的变量会在程序外被改变,每次都必须从内存中读取，而不能重复使用放在cache或寄存器中的备份。
+同时说明局部变量被优化后结果出现异常。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/05/23/work-test/">不同机器上配置发Blog</a></h1>
     
     
@@ -88,7 +190,7 @@
   
 
 
-<time datetime="2013-05-23T14:17:00+08:00" pubdate data-updated="true">May 23<span>rd</span>, 2013</time>
+<time datetime="2013-05-23T14:17:00+08:00" pubdate data-updated="true">2013年05月23日</time>
         
       </p>
     
@@ -185,7 +287,7 @@ git push origin source
   
 
 
-<time datetime="2013-05-22T22:19:00+08:00" pubdate data-updated="true">May 22<span>nd</span>, 2013</time>
+<time datetime="2013-05-22T22:19:00+08:00" pubdate data-updated="true">2013年05月22日</time>
         
       </p>
     
@@ -316,7 +418,7 @@ git push origin source
   
 
 
-<time datetime="2013-05-22T20:42:00+08:00" pubdate data-updated="true">May 22<span>nd</span>, 2013</time>
+<time datetime="2013-05-22T20:42:00+08:00" pubdate data-updated="true">2013年05月22日</time>
         
       </p>
     
@@ -339,9 +441,19 @@ git push origin source
 </div>
 <aside class="sidebar">
   
-    <section>
-  <h1>Recent Posts</h1>
+    
+<section>
+<h1>分类标签</h1>
+<span class='categories_tag'> <a href='/blog/categories/test' style='font-size: 160.0%'>Test(2)</a>  <a href='/blog/categories/test111' style='font-size: 130.0%'>Test111(1)</a> </span>
+</section>
+
+<section>
+  <h1>最近发表</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/05/31/c-one/">C语言一例子（参数执行顺序，变量存储类型）</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/05/23/work-test/">不同机器上配置发Blog</a>
@@ -359,6 +471,18 @@ git push origin source
 </section>
 
 
+
+
+<section>
+  	<h1>关于本人</h1>
+ <p align="center"><img src="http://yunbgs.com/images/poineering.jpg" /></p>
+
+
+<p>程序猿一枚</p><p><a href="/blog/about" >更多介绍&#8230;</a></p>
+<p></p><p>本人主页为<a href="http://yunbgs.com" target="_blank">http://yunbgs.com</a></p>
+
+<p align="center"></p>
+</section>
 
 
 
