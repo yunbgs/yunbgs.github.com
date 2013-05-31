@@ -4,7 +4,7 @@
   <title><![CDATA[云办公室]]></title>
   <link href="http://yunbgs.github.io/atom.xml" rel="self"/>
   <link href="http://yunbgs.github.io/"/>
-  <updated>2013-05-31T15:59:28+08:00</updated>
+  <updated>2013-05-31T16:34:40+08:00</updated>
   <id>http://yunbgs.github.io/</id>
   <author>
     <name><![CDATA[yunbgs.com]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[设计模式之UML一览备忘]]></title>
+    <link href="http://yunbgs.github.io/blog/2013/05/31/design-patterns-uml/"/>
+    <updated>2013-05-31T16:31:00+08:00</updated>
+    <id>http://yunbgs.github.io/blog/2013/05/31/design-patterns-uml</id>
+    <content type="html"><![CDATA[<p><img src="http://yunbgs.com/images/design_patterns_uml.png" alt="" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[C语言一例子（参数执行顺序，变量存储类型）]]></title>
