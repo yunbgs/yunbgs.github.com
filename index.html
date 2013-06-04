@@ -139,15 +139,15 @@
 
 int
 test(int x,int y,int z){
-printf("x=%d,y=%d,z=%d\n",x,y,z);
-return 0;
+    printf("x=%d,y=%d,z=%d\n",x,y,z);
+    return 0;
 }
 int
 main(){
-int t=1;
-test(t++,t,t++);
-printf("%d,%d,%d\n",t++,t,t++);
-return;
+    int t=1;
+    test(t++,t,t++);
+    printf("%d,%d,%d\n",t++,t,t++);
+    return;
 }
 </code></pre>
 
@@ -161,15 +161,15 @@ return;
 
 int
 test(int x,int y,int z){
-printf("x=%d,y=%d,z=%d\n",x,y,z);
-return 0;
+    printf("x=%d,y=%d,z=%d\n",x,y,z);
+    return 0;
 }
 int
 main(){
-static int t=1;
-test(t++,t,t++);
-printf("%d,%d,%d\n",t++,t,t++);
-return;
+    static int t=1;
+    test(t++,t,t++);
+    printf("%d,%d,%d\n",t++,t,t++);
+    return;
 }
 </code></pre>
 
@@ -183,15 +183,15 @@ return;
 
 int
 test(int x,int y,int z){
-printf("x=%d,y=%d,z=%d\n",x,y,z);
-return 0;
+    printf("x=%d,y=%d,z=%d\n",x,y,z);
+    return 0;
 }
 int
 main(){
-volatile int t=1;
-test(t++,t,t++);
-printf("%d,%d,%d\n",t++,t,t++);
-return;
+    volatile int t=1;
+    test(t++,t,t++);
+    printf("%d,%d,%d\n",t++,t,t++);
+    return;
 }
 </code></pre>
 

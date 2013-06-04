@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C | 云办公室]]></title>
   <link href="http://yunbgs.github.io/blog/categories/c/atom.xml" rel="self"/>
   <link href="http://yunbgs.github.io/"/>
-  <updated>2013-05-31T16:52:57+08:00</updated>
+  <updated>2013-06-04T08:43:44+08:00</updated>
   <id>http://yunbgs.github.io/</id>
   <author>
     <name><![CDATA[yunbgs.com]]></name>
@@ -24,15 +24,15 @@
 
 int
 test(int x,int y,int z){
-printf("x=%d,y=%d,z=%d\n",x,y,z);
-return 0;
+    printf("x=%d,y=%d,z=%d\n",x,y,z);
+    return 0;
 }
 int
 main(){
-int t=1;
-test(t++,t,t++);
-printf("%d,%d,%d\n",t++,t,t++);
-return;
+    int t=1;
+    test(t++,t,t++);
+    printf("%d,%d,%d\n",t++,t,t++);
+    return;
 }
 </code></pre>
 
@@ -46,15 +46,15 @@ return;
 
 int
 test(int x,int y,int z){
-printf("x=%d,y=%d,z=%d\n",x,y,z);
-return 0;
+    printf("x=%d,y=%d,z=%d\n",x,y,z);
+    return 0;
 }
 int
 main(){
-static int t=1;
-test(t++,t,t++);
-printf("%d,%d,%d\n",t++,t,t++);
-return;
+    static int t=1;
+    test(t++,t,t++);
+    printf("%d,%d,%d\n",t++,t,t++);
+    return;
 }
 </code></pre>
 
@@ -68,15 +68,15 @@ return;
 
 int
 test(int x,int y,int z){
-printf("x=%d,y=%d,z=%d\n",x,y,z);
-return 0;
+    printf("x=%d,y=%d,z=%d\n",x,y,z);
+    return 0;
 }
 int
 main(){
-volatile int t=1;
-test(t++,t,t++);
-printf("%d,%d,%d\n",t++,t,t++);
-return;
+    volatile int t=1;
+    test(t++,t,t++);
+    printf("%d,%d,%d\n",t++,t,t++);
+    return;
 }
 </code></pre>
 
