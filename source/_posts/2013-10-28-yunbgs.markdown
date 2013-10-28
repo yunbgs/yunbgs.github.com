@@ -6,3 +6,4 @@ comments: true
 categories: 云办公室
 ---
 ![](http://yunbgs.com/images/workflow_1.png)
+![](http://yunbgs.com/images/workflow_2.png)
