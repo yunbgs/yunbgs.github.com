@@ -9,7 +9,7 @@
   <meta name="author" content="yunbgs.com">
 
   
-  <meta name="description" content=" 下载pdf
+  <meta name="description" content="
 ">
   
 
@@ -72,7 +72,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/05/31/design-patterns-uml/">设计模式之UML一览备忘</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/10/28/yunbgs/">云办公室-企业办公的利器</a></h1>
     
     
       <p class="meta">
@@ -88,385 +88,14 @@
   
 
 
-<time datetime="2013-05-31T16:31:00+08:00" pubdate data-updated="true">2013年05月31日</time>
+<time datetime="2013-10-28T00:06:00+08:00" pubdate data-updated="true">2013年10月28日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="http://yunbgs.com/images/design_patterns_uml.png" alt="" /></p>
-
-<p><a href="http://yunbgs.com/download/pdf/designpatternscard.pdf" title="设计模式之UML一览">下载pdf</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/31/c-one/">C语言一例子（参数执行顺序，变量存储类型）</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-31T14:23:00+08:00" pubdate data-updated="true">2013年05月31日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>3个小例子说明实际细节问题，局部变量存在栈中会被编译器优化(从cache或寄存器中读取)，static变量存储在静态区不会被优化，volatile变量存在栈区但它告诉程序每次都要去存放的地方读取。</p>
-
-<pre><code>#include &lt;stdio.h&gt;
-
-int
-test(int x,int y,int z){
-    printf("x=%d,y=%d,z=%d\n",x,y,z);
-    return 0;
-}
-int
-main(){
-    int t=1;
-    test(t++,t,t++);
-    printf("%d,%d,%d\n",t++,t,t++);
-    return;
-}
-</code></pre>
-
-<p>打印结果：</p>
-
-<blockquote><p>x=2,y=3,z=1</p>
-
-<p>4,5,3</p></blockquote>
-
-<pre><code>#include &lt;stdio.h&gt;
-
-int
-test(int x,int y,int z){
-    printf("x=%d,y=%d,z=%d\n",x,y,z);
-    return 0;
-}
-int
-main(){
-    static int t=1;
-    test(t++,t,t++);
-    printf("%d,%d,%d\n",t++,t,t++);
-    return;
-}
-</code></pre>
-
-<p>打印结果：</p>
-
-<blockquote><p>x=2,y=2,z=1</p>
-
-<p>4,4,3</p></blockquote>
-
-<pre><code>#include &lt;stdio.h&gt;
-
-int
-test(int x,int y,int z){
-    printf("x=%d,y=%d,z=%d\n",x,y,z);
-    return 0;
-}
-int
-main(){
-    volatile int t=1;
-    test(t++,t,t++);
-    printf("%d,%d,%d\n",t++,t,t++);
-    return;
-}
-</code></pre>
-
-<p>打印结果：</p>
-
-<blockquote><p>x=2,y=2,z=1</p>
-
-<p>4,4,3</p></blockquote>
-
-<p>volatile定义的变量会在程序外被改变,每次都必须从内存中读取，而不能重复使用放在cache或寄存器中的备份。
-同时说明局部变量被优化后结果出现异常。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/23/work-test/">不同机器上配置发Blog</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-23T14:17:00+08:00" pubdate data-updated="true">2013年05月23日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>想工作机器与家中机器上都可以同步发Blog,解决办法：</p>
-
-<h1>1.同前配置</h1>
-
-<p>安装和设置Git
-安装Ruby环境</p>
-
-<h1>2.不同配置</h1>
-
-<p>获取自己github上的octopress仓库</p>
-
-<pre><code>git clone -b source git@github.com:username/username.github.com.git octopress
-cd octopress
-git clone git@github.com:username/username.github.com.git _deploy
-</code></pre>
-
-<p>安装依赖gems</p>
-
-<pre><code>gem install bundler
-bundle install
-rake install
-或
-bundle exec rake install
-</code></pre>
-
-<p>更新_deploy和source内容</p>
-
-<pre><code>cd _deploy
-git pull origin master
-cd ..
-git pull origin source
-</code></pre>
-
-<p>至此，我们在另外一台pc上的octopress环境就搭建完成了，以下是比较重要的说明： 试想一下，如果我们此时在这个环境中执行：</p>
-
-<pre><code>rake new_post['title']
-rake generate
-rake deploy
-</code></pre>
-
-<p>会发生什么呢？显然，我们所有的文章只剩下刚刚新建的这个了。所以我们需要做的是将旧的<em>post目录下的文章同步到新的</em>post目录下，这就是git的用法了。</p>
-
-<p>进入旧的_post的目录下：</p>
-
-<pre><code>git add *
-git commit -m
-git push origin source
-</code></pre>
-
-<p>每次写文章之前，进入当前的_post目录下：</p>
-
-<pre><code>git pull origin source
-</code></pre>
-
-<p>写完之后，执行：</p>
-
-<pre><code>git add *
-git commit -m
-git push origin source
-</code></pre>
-
-<p>也就是说，每次写之前写之后都要与仓库进行同步！</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/22/yunbgs/">Github个人博客</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-22T22:19:00+08:00" pubdate data-updated="true">2013年05月22日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>过程如下：</p>
-
-<h1>安装和设置Git</h1>
-
-<p>下载Git for Windows，安装完成后就可以在本地使用Git了，但要将内容放到Github上，必须先在Github上注册个账户，然后在本机使用Git创建SSH Key。</p>
-
-<p>在Git Bash上输入命令:</p>
-
-<pre><code>ssh-keygen -C "username@email.com" -t rsa
-</code></pre>
-
-<p>Note: username@email.com需要更换成你自己的在Github上注册的Email地址</p>
-
-<p>这样会在用户目录(C:\Documents and Settings\UserName)下产生一个.ssh文件夹，里面为对应的SSH Keys，其中id_rsa.pub是Github需要的SSH公钥文件。</p>
-
-<p>在Github的Account Settings里选择SSH Keys，在其中将id_rsa.pub文件里内容拷贝至 其中的Key里。</p>
-
-<p>这样以后就可以直接使用Git和GitHub了。</p>
-
-<h1>安装Ruby环境</h1>
-
-<p>下载RubyInstaller和DevKit。</p>
-
-<p>Octopress需要的Ruby版本为1.9.2，所以选rubyinstaller-1.9.2-p290.exe，DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe。</p>
-
-<p>先安装RubyInstaller，然后解压缩DevKit(路径中不能有中文)。</p>
-
-<p>在”Start Command Prompt with Ruby”命令行中进入DevKit解压缩的目录，然后运行以下命令:</p>
-
-<pre><code>ruby dk.rb init
-ruby dk.rb install
-gem install rdiscount --platform=ruby
-</code></pre>
-
-<p>如果安装成功，就可以使用一些Ruby的工具了，也为后面搭建博客提供了基础环境。</p>
-
-<h1>安装Octopress</h1>
-
-<p>先通过Git从Github上克隆一份Octopress</p>
-
-<pre><code>git clone git://github.com/imathis/octopress.git octopress
-</code></pre>
-
-<p>然后安装一些依赖的工具</p>
-
-<pre><code>cd octopress
-ruby --version # Should report Ruby 1.9.2
-gem install bundler
-bundle install
-</code></pre>
-
-<p>安装Octopress默认的Theme</p>
-
-<pre><code>rake install
-</code></pre>
-
-<h1>配置Octopress</h1>
-
-<p>通过修改_config.yml来配置博客，具体可以在我的Github上查看具体的配置内容。</p>
-
-<h1>开始写博文</h1>
-
-<p>通过rake new_post[&ldquo;title&rdquo;]来在source/_post下创建一个新的Post，文件名如下面的格式:2012-02-16-title.markdown。</p>
-
-<p>然后可以用VIM打开该文件，并在其中输入/编辑文章内容。</p>
-
-<p>写文章时，可以使用Markdown和Octopress Plugins来对内容进行格式排版。</p>
-
-<h1>预览效果</h1>
-
-<p>在修改设置或者写完文章后，想看看具体效果，可以通过如下命令来完成:</p>
-
-<pre><code>rake generate
-rake preview
-</code></pre>
-
-<p>然后在浏览器中打开<a href="http://localhost:4000/">http://localhost:4000/</a> 来看一看效果。</p>
-
-<h1>将博客部署到Github上</h1>
-
-<p>在预览的效果符合自己的预期后，就可以通过如下命令将内容部署到Github上了。</p>
-
-<p>第一次部署前需要先要在Github上创建一个username.github.com的repository， 然后通过rake setup_github_pages将自己的Blog与上述的repository关联起来。 在其过程中根据提示输入username.github.com。</p>
-
-<p>然后就可以通过下面的命令来部署自己的博客内容至Github了:</p>
-
-<pre><code>rake deploy
-git status
-git add .
-git commit -a -m 'comment'
-git push origin source
-</code></pre>
-
-<h1>开始浏览自己的博客</h1>
-
-<p>在浏览器的地址栏中输入username.github.com，打开的网站就是自己的博客了，此刻一个独立博客就如此问世了!</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/22/test-title/">Test_title</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-22T20:42:00+08:00" pubdate data-updated="true">2013年05月22日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">
+  <div class="entry-content"><p><img src="http://yunbgs.com/images/workflow_1.png" alt="" /></p>
 </div>
   
   
@@ -485,31 +114,15 @@ git push origin source
     
 <section>
 <h1>分类标签</h1>
-<span class='categories_tag'> <a href='/blog/categories/c' style='font-size: 130.0%'>C(1)</a>  <a href='/blog/categories/git' style='font-size: 160.0%'>Git(2)</a>  <a href='/blog/categories/test' style='font-size: 130.0%'>Test(1)</a>  <a href='/blog/categories/设计模式' style='font-size: 130.0%'>设计模式(1)</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/云办公室' style='font-size: 160.0%'>云办公室(1)</a> </span>
 </section>
 
 <section>
-  <h1>最近发表</h1>
+  <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/05/31/design-patterns-uml/">设计模式之UML一览备忘</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/31/c-one/">C语言一例子（参数执行顺序，变量存储类型）</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/23/work-test/">不同机器上配置发Blog</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/22/yunbgs/">Github个人博客</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/22/test-title/">Test_title</a>
+        <a href="/blog/2013/10/28/yunbgs/">云办公室-企业办公的利器</a>
       </li>
     
   </ul>
