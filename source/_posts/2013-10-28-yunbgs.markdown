@@ -7,16 +7,11 @@ categories: 云办公室
 ---
 ![](http://yunbgs.com/images/workflow_0.jpg)
 
-----------
-
 - 企业自架服务器，自主管理维护，敏捷办公的利器
 - 项目任务可分可配可集体共享，互通无限
 - 文字语音视频于一体,沟通无限
 - 自建呼叫中心,对接电话网,多网互联无限
 - 服务器可分布式扩展,容量无限
 - 用户权限分配管理，后台可监控，安全可控
-
-----------
-
 ![](http://yunbgs.com/images/workflow_1.png)
 ![](http://yunbgs.com/images/workflow_2.png)
