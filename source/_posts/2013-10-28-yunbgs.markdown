@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "云办公室-敏捷办公的利器"
 date: 2013-10-28 00:06
@@ -6,6 +6,6 @@ comments: true
 categories: 云办公室
 ---
 让我来提高团队办公的效能，云办公室，敏捷办公的利器
-![](http://yunbgs.com/images/workflow_0.jpg)
+![](http://yunbgs.com/images/workflow_1.jpg)
 ![](http://yunbgs.com/images/workflow_1.png)
 ![](http://yunbgs.com/images/workflow_2.png)
