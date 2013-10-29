@@ -4,7 +4,7 @@
   <title><![CDATA[云办公室]]></title>
   <link href="http://yunbgs.github.io/atom.xml" rel="self"/>
   <link href="http://yunbgs.github.io/"/>
-  <updated>2013-10-28T15:34:54+08:00</updated>
+  <updated>2013-10-29T11:19:52+08:00</updated>
   <id>http://yunbgs.github.io/</id>
   <author>
     <name><![CDATA[yunbgs.com]]></name>
@@ -14,11 +14,20 @@
 
   
   <entry>
-    <title type="html"><![CDATA[云办公室-企业办公的利器]]></title>
+    <title type="html"><![CDATA[Yunbgs]]></title>
     <link href="http://yunbgs.github.io/blog/2013/10/28/yunbgs/"/>
-    <updated>2013-10-28T00:06:00+08:00</updated>
+    <updated>2013-10-28T00:00:00+08:00</updated>
     <id>http://yunbgs.github.io/blog/2013/10/28/yunbgs</id>
-    <content type="html"><![CDATA[<p><img src="http://yunbgs.com/images/workflow_1.png" alt="" /></p>
+    <content type="html"><![CDATA[<p>﻿&mdash;&ndash;
+layout: post
+title: &ldquo;云办公室-敏捷办公的利器&rdquo;
+date: 2013-10-28 00:06
+comments: true</p>
+
+<h2>categories: 云办公室</h2>
+
+<p><img src="http://yunbgs.com/images/workflow_1.png" alt="" />
+<img src="http://yunbgs.com/images/workflow_2.png" alt="" /></p>
 ]]></content>
   </entry>
   
