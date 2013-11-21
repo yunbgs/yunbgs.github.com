@@ -15,3 +15,4 @@ categories: 云办公室
 - 用户权限分配管理，后台可监控，安全可控
 ![](http://yunbgs.com/images/workflow_1.png)
 ![](http://yunbgs.com/images/workflow_2.png)
+![](http://yunbgs.com/images/workflow_3.png)
