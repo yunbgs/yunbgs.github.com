@@ -16,3 +16,11 @@ categories: 云办公室
 ![](http://yunbgs.com/images/workflow_1.png)
 ![](http://yunbgs.com/images/workflow_2.png)
 ![](http://yunbgs.com/images/workflow_3.png)
+
+......
+
+![](http://yunbgs.com/images/windows_download.png)[服务器下载](http://yunbgs.com/download/yunbgs/server.rar)
+![](http://yunbgs.com/images/windows_download.png)[客户端下载](http://yunbgs.com/download/yunbgs/pc_client.rar)
+![](http://yunbgs.com/images/android_download.png)[客户端下载](http://yunbgs.com/download/yunbgs/android_client.rar)
+![](http://yunbgs.com/images/apple_download.png)[客户端下载](http://yunbgs.com/download/yunbgs/apple_client.rar)
+
