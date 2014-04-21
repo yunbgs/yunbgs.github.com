@@ -24,10 +24,10 @@ categories: 云办公室
 ----------
 
 
-服务器：[![](http://yunbgs.com/images/windows_download.png)](http://yunbgs.com/download/yunbgs/server.rar)
+服务器：[![](http://yunbgs.com/images/windows_download.png)](http://yunbgs.com/download/yunbgs/pbx-windows.rar)
 
-客户端：[![](http://yunbgs.com/images/windows_download.png)](http://yunbgs.com/download/yunbgs/pc_client.rar) 
-[![](http://yunbgs.com/images/android_download.png)](http://yunbgs.com/download/yunbgs/android_client.rar) 
-[![](http://yunbgs.com/images/apple_download.png)](http://yunbgs.com/download/yunbgs/apple_client.rar) 
+客户端：[![](http://yunbgs.com/images/windows_download.png)](http://yunbgs.com/download/yunbgs/uc-windows.rar) 
+[![](http://yunbgs.com/images/android_download.png)](http://yunbgs.com/download/yunbgs/uc-android.rar) 
+[![](http://yunbgs.com/images/apple_download.png)](http://yunbgs.com/download/yunbgs/uc-ios.rar) 
 
 
